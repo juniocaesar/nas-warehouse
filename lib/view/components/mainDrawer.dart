@@ -64,12 +64,17 @@ class MainDrawer extends StatelessWidget {
           DrawerMenu(
             icon: Icons.supervisor_account,
             text: "Kelola Pengguna",
-            navigate: "/",
+            navigate: "/KelolaPengguna",
           ),
           DrawerMenu(
             icon: Icons.history,
             text: "Riwayat Aktivitas",
             navigate: "/RiwayatAktivitas",
+          ),
+          DrawerMenu(
+            icon: Icons.logout,
+            text: "Logout",
+            navigate: "/",
           ),
         ],
       ),

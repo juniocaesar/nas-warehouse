@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'components/mainDrawer.dart' as MainDrawerActivity;
 
-class KelolaGudang extends StatefulWidget {
-  const KelolaGudang({Key? key}) : super(key: key);
+class KelolaPengguna extends StatefulWidget {
+  const KelolaPengguna({Key? key}) : super(key: key);
 
   @override
-  State<KelolaGudang> createState() => _KelolaGudangState();
+  State<KelolaPengguna> createState() => _KelolaPenggunaState();
 }
 
-class _KelolaGudangState extends State<KelolaGudang> {
+class _KelolaPenggunaState extends State<KelolaPengguna> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Center(
-          child: Text("Kelola Gudang"),
+          child: Text("Kelola Pengguna"),
         ),
         backgroundColor: Colors.teal,
       ),

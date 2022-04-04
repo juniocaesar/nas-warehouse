@@ -4,7 +4,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'view/login.dart' as LoginActivity;
 import 'view/dashboard.dart' as DashboardActivity;
-import 'view/kelolaGudang.dart' as KelolaGudangActivity;
+import 'view/kelolaPengguna.dart' as KelolaPenggunaActivity;
 import 'view/riwayatAktivitas.dart' as RiwayatAktivitasActivity;
 
 void main() {
@@ -13,8 +13,8 @@ void main() {
     home: LoginActivity.Login(),
     routes: <String, WidgetBuilder>{
       '/Dashboard': (BuildContext context) => DashboardActivity.Dashboard(),
-      '/KelolaGudang': (BuildContext context) =>
-          KelolaGudangActivity.KelolaGudang(),
+      '/KelolaPengguna': (BuildContext context) =>
+          KelolaPenggunaActivity.KelolaPengguna(),
       '/RiwayatAktivitas': (BuildContext context) =>
           RiwayatAktivitasActivity.RiwayatAktivitas(),
     },

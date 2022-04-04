@@ -19,7 +19,14 @@ class _DashboardState extends State<Dashboard> {
         backgroundColor: Colors.teal,
       ),
       drawer: MainDrawerActivity.MainDrawer(),
-      body: Text(""),
+      body: Container(
+        child: Row(
+          children: [
+            Text("Masuk Sebagai: "),
+            Text("Admin"),
+          ],
+        ),
+      ),
     );
   }
 }

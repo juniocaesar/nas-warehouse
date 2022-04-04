@@ -1,78 +1,67 @@
 import 'package:flutter/material.dart';
 
 class Login extends StatefulWidget {
-  const Login({Key? key}) : super(key: key);
-
   @override
-  State<Login> createState() => _LoginState();
+  State<StatefulWidget> createState() => new _LoginState();
 }
 
 class _LoginState extends State<Login> {
-  TextEditingController usernameFieldController = new TextEditingController();
-  TextEditingController passwordFieldController = new TextEditingController();
+  TextEditingController usernameController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Center(
-          child: Text("Login"),
+        appBar: AppBar(
+          title: Center(child: Text('Login')),
+          backgroundColor: Colors.teal,
         ),
-        backgroundColor: Colors.teal,
-      ),
-      backgroundColor: Colors.white,
-      body: Container(
-        padding: EdgeInsets.all(20.0),
-        child: Center(
-          child: Container(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
+        body: Padding(
+            padding: EdgeInsets.all(10),
+            child: ListView(
               children: [
-                Spacer(),
-                Image.asset(
-                  "img/logo_nas.png",
-                  width: 250.0,
+                Container(
+                    alignment: Alignment.center,
+                    padding: EdgeInsets.all(10),
+                    child: Image.asset(
+                      'lib/img/logo.png',
+                      width: 150.0,
+                    )),
+                Container(
+                  alignment: Alignment.center,
+                  padding: EdgeInsets.all(10),
+                  child: TextField(
+                    controller: usernameController,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'Username',
+                    ),
+                  ),
                 ),
-                Spacer(),
-                TextField(
-                  controller: usernameFieldController,
-                  decoration: InputDecoration(
-                      hintText: "Masukkan Username",
-                      focusedBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(color: Colors.teal))),
+                Container(
+                  alignment: Alignment.center,
+                  padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+                  child: TextField(
+                    obscureText: true,
+                    controller: passwordController,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'Password',
+                    ),
+                  ),
                 ),
-                TextField(
-                  controller: passwordFieldController,
-                  decoration: InputDecoration(
-                      hintText: "Masukkan Password",
-                      focusedBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(color: Colors.teal))),
-                  obscureText: true,
-                  enableSuggestions: false,
-                  autocorrect: false,
-                ),
-                Spacer(),
-                ElevatedButton(
-                  child: Text('Login'),
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/Dashboard');
-                  },
-                  style: ElevatedButton.styleFrom(
-                      primary: Colors.teal,
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 100, vertical: 20),
-                      textStyle: TextStyle(fontSize: 18)),
-                ),
-                Spacer(),
-                Spacer(),
-                Spacer(),
-                Spacer(),
-                Spacer(),
+                Container(
+                    height: 65,
+                    padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+                    child: RaisedButton(
+                      textColor: Colors.white,
+                      color: Colors.teal,
+                      child: Text('Login'),
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/Dashboard');
+                      },
+                    ))
               ],
-            ),
-          ),
-        ),
-      ),
-    );
+            )));
   }
 }
